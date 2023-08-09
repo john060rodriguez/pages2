@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+        <title>Swag App</title>
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+                background-image: url('./image.jpg');
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 100vh;
+            }
+            .center-box {
+                background: rgb(223 223 223);
+                padding: 1.5rem 3rem;
+                text-align: center;
+                margin: 3%;
+            }
+            p {
+                font-size: 20px;
+            }
+            a {
+                text-decoration: underline;
+                font-weight: 600;
+                color: #000;
+            }
+            
+            #mobile-message {
+                display: none;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="desktop-message" class="center-box">
+            <p>Listing can only be viewed from the Swag App on your device.</p>
+        </div>
+        <div id="mobile-message" class="center-box">
+            <p>Listing can only be viewed from the Swag App on your device.</p>
+            <a href="#">Download the app here.</a>
+        </div>
+    </body>
+    <script>
+        function isMobileDevice() {
+            return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);
+        }
+        if (isMobileDevice()) {
+            document.getElementById('desktop-message').style.display = 'none';
+            document.getElementById('mobile-message').style.display = 'block';
+        }
+    </script>
+</html>
